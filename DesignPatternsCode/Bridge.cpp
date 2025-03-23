@@ -1,12 +1,14 @@
-/** ÇÅ½ÓÄ£Ê½
+/** æ¡¥æ¥æ¨¡å¼
+ * å°†åŠŸèƒ½æ‹†åˆ†ä¸ºä¸åŒç±»ï¼ˆè¯»ç±»ã€å†™ç±»ï¼‰ï¼Œä¸åŒç±»å„è‡ªæœ‰è‡ªå·±çš„å­ç±»ï¼ˆè¯»æ–‡æœ¬ã€è§†é¢‘...ï¼›å†™æ–‡æœ¬ã€è§†é¢‘...ï¼‰
+ * è€Œä¸åŒç±»åŠŸèƒ½ç±»ä¹‹é—´åˆå­˜åœ¨ä¾èµ–å…³ç³»(è¯»æ–‡æœ¬çš„ç±»éœ€è¦å†™æ–‡æœ¬çš„ç±»è¿›è¡Œå†™å…¥)
  */
 #include <iostream>
 #include <ostream>
 
- /* Implementation¶¨ÒåÁËËùÓĞÊµÏÖÀàµÄ½Ó¿Ú¡£
-  * Ëü²»±ØÓë³éÏóµÄ½Ó¿ÚÏàÆ¥Åä¡£
-  * ÊÂÊµÉÏ£¬ÕâÁ½¸ö½Ó¿Ú¿ÉÒÔÍêÈ«²»Í¬¡£
-  * Í¨³£Çé¿öÏÂ£¬ÊµÏÖ½Ó¿ÚÖ»Ìá¹©»ù±¾²Ù×÷£¬¶ø³éÏó½Ó¿ÚÔòÔÚÕâĞ©»ù±¾²Ù×÷µÄ»ù´¡ÉÏ¶¨Òå¸ü¸ß¼¶±ğµÄ²Ù×÷
+ /* Implementationå®šä¹‰äº†æ‰€æœ‰å®ç°ç±»çš„æ¥å£ã€‚
+  * å®ƒä¸å¿…ä¸æŠ½è±¡çš„æ¥å£ç›¸åŒ¹é…ã€‚
+  * äº‹å®ä¸Šï¼Œè¿™ä¸¤ä¸ªæ¥å£å¯ä»¥å®Œå…¨ä¸åŒã€‚
+  * é€šå¸¸æƒ…å†µä¸‹ï¼Œå®ç°æ¥å£åªæä¾›åŸºæœ¬æ“ä½œï¼Œè€ŒæŠ½è±¡æ¥å£åˆ™åœ¨è¿™äº›åŸºæœ¬æ“ä½œçš„åŸºç¡€ä¸Šå®šä¹‰æ›´é«˜çº§åˆ«çš„æ“ä½œ
   */
 class Implementation {
 public:
@@ -15,24 +17,24 @@ public:
 };
 
 /**
- * Ã¿¸ö¾ßÌåÊµÏÖ£¨ConcreteImplementation£©¶¼¶ÔÓ¦Ò»¸öÌØ¶¨µÄÆ½Ì¨£¬²¢ Ê¹ÓÃ¸ÃÆ½Ì¨µÄ API ÊµÏÖÊµÏÖ½Ó¿Ú
+ * æ¯ä¸ªå…·ä½“å®ç°ï¼ˆConcreteImplementationï¼‰éƒ½å¯¹åº”ä¸€ä¸ªç‰¹å®šçš„å¹³å°ï¼Œå¹¶ ä½¿ç”¨è¯¥å¹³å°çš„ API å®ç°å®ç°æ¥å£
  */
 class ConcreteImplementationA : public Implementation {
 public:
     std::string OperationImplementation() const override {
-        return "ConcreteImplementationA: ÕâÏÂÊÇÆ½Ì¨ÉÏµÄ½á¹û A.\n";
+        return "ConcreteImplementationA: è¿™ä¸‹æ˜¯å¹³å°ä¸Šçš„ç»“æœ A.\n";
     }
 };
 class ConcreteImplementationB : public Implementation {
 public:
     std::string OperationImplementation() const override {
-        return "ConcreteImplementationB: ÕâÏÂÊÇÆ½Ì¨ÉÏµÄ½á¹û B.\n";
+        return "ConcreteImplementationB: è¿™ä¸‹æ˜¯å¹³å°ä¸Šçš„ç»“æœ B.\n";
     }
 };
 
 /**
- *  Abstraction¶¨ÒåÁËÁ½¸öÀà²ã´Î½á¹¹ÖĞ ¡°¿ØÖÆ ¡±²¿·ÖµÄ½Ó¿Ú¡£
- *  ËüÎ¬»¤¶ÔÊµÏÖ²ã´Î½á¹¹¶ÔÏóµÄÒıÓÃ£¬²¢½«ËùÓĞÊµ¼Ê¹¤×÷Î¯ÍĞ¸ø¸Ã¶ÔÏó
+ *  Abstractionå®šä¹‰äº†ä¸¤ä¸ªç±»å±‚æ¬¡ç»“æ„ä¸­ â€œæ§åˆ¶ â€éƒ¨åˆ†çš„æ¥å£ã€‚
+ *  å®ƒç»´æŠ¤å¯¹å®ç°å±‚æ¬¡ç»“æ„å¯¹è±¡çš„å¼•ç”¨ï¼Œå¹¶å°†æ‰€æœ‰å®é™…å·¥ä½œå§”æ‰˜ç»™è¯¥å¯¹è±¡
  */
 class Abstraction {
     /**
@@ -42,7 +44,7 @@ protected:
     Implementation* implementation_;
 
 public:
-    //Í¨¹ıImplementation¶ÔÏó³õÊ¼»¯Abstraction£¬ÕâÑù²»Í¬µÄAbstractionµ÷ÓÃµÄ½Ó¿ÚÊµÏÖ²»Í¬
+    //é€šè¿‡Implementationå¯¹è±¡åˆå§‹åŒ–Abstractionï¼Œè¿™æ ·ä¸åŒçš„Abstractionè°ƒç”¨çš„æ¥å£å®ç°ä¸åŒ
     Abstraction(Implementation* implementation) : implementation_(implementation) {}
 
     virtual ~Abstraction() {}
@@ -53,7 +55,7 @@ public:
     }
 };
 /**
- * Äú¿ÉÒÔÔÚ²»¸Ä±äAbstractionÀàµÄÇé¿öÏÂÀ©Õ¹ImplementationÀà
+ * æ‚¨å¯ä»¥åœ¨ä¸æ”¹å˜Abstractionç±»çš„æƒ…å†µä¸‹æ‰©å±•Implementationç±»
  */
 class ExtendedAbstraction : public Abstraction {
 public:
@@ -65,8 +67,8 @@ public:
 };
 
 /**
- * ÔÚ³õÊ¼»¯½×¶Î£¬Implementation¶ÔÏó»áÓëÌØ¶¨µÄAbstraction¶ÔÏóÏàÁ¬½Ó£¬³ı´ËÖ®Íâ£¬¿Í»§»ú´úÂëÓ¦¸ÃÖ»ÒÀÀµÓÚAbstractionÀà¡£
- * ÕâÑù£¬ClientCode¾ÍÄÜÖ§³ÖÈÎºÎ³éÏóÓëÊµÏÖµÄ×éºÏ
+ * åœ¨åˆå§‹åŒ–é˜¶æ®µï¼ŒImplementationå¯¹è±¡ä¼šä¸ç‰¹å®šçš„Abstractionå¯¹è±¡ç›¸è¿æ¥ï¼Œé™¤æ­¤ä¹‹å¤–ï¼Œå®¢æˆ·æœºä»£ç åº”è¯¥åªä¾èµ–äºAbstractionç±»ã€‚
+ * è¿™æ ·ï¼ŒClientCodeå°±èƒ½æ”¯æŒä»»ä½•æŠ½è±¡ä¸å®ç°çš„ç»„åˆ
  */
 void ClientCode(const Abstraction& abstraction) {
     // ...
